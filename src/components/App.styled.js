@@ -12,11 +12,15 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
   display: flex;
   justify-content: center;
+  color: teal;
+  font-size: 40px;
 `;
 
 export const Title2 = styled.h2`
   display: flex;
   justify-content: center;
+  color: teal;
+  font-size: 36px;
 `;
 export const Title3 = styled.h3`
   display: flex;
