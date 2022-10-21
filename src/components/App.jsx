@@ -1,4 +1,4 @@
-// import { render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
@@ -15,12 +15,12 @@ class App extends Component {
 
   addContact = (name, number) => {
     const newContact = {
-      id: nanoid.generate(),
+      id: nanoid(),
       name,
       number,
     };
 
-    this.setState(({ prevState }) => ({
+    this.setState(prevState => ({
       contacts: [newContact, ...prevState.contacts],
     }));
   };
