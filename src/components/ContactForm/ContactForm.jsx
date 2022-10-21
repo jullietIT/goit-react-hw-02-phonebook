@@ -19,20 +19,11 @@ class ContactForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state);
-    this.setState({ name: '', number: '' });
+    this.props.onSubmit(this.state.name);
+    this.setState({ name: '' });
 
     // this.reset();
   };
-
-  // handleChange = event => {
-  //   this.setState({ name: event.currentTarget.value });
-  //   handleSubmit = event => {
-  //     event.preventDefault();
-  //   };
-
-  //   console.log(this.state);
-  // };
 
   //очистка формы
   reset = () => {

@@ -24,7 +24,7 @@ export const Button = styled.button`
   cursor: pointer;
   :hover,
   :focus {
-    background-color: pink;
-    color: white;
+    background-color: yellow;
+    color: black;
   }
 `;

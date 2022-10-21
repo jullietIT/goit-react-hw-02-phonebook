@@ -6,7 +6,7 @@ export const WrapperForm = styled.div`
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 200px;
+  height: 250px;
   border: 2px solid #000;
   border-radius: 10px;
   margin: 0 auto;
@@ -24,24 +24,19 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  padding: 3px;
-  width: 150px;
-  height: 30px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  min-width: 100px;
-
+  min-width: 150px;
+  padding: 4px 12px;
+  margin-top: 10px;
   border: 1px solid #000;
   border-radius: 6px;
+  text-transform: capitalize;
+  cursor: pointer;
   text-transform: capitalize;
 
   cursor: pointer;
   :hover,
   :focus {
-    background-color: pink;
-    color: white;
+    background-color: yellow;
+    color: black;
   }
 `;
