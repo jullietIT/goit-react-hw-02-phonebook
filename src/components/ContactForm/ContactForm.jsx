@@ -16,20 +16,21 @@ class ContactForm extends Component {
     event.preventDefault();
 
     this.props.onSubmit({ ...this.state });
-    this.setState({ name: '', number: '' });
+    // this.setState({ name: '', number: '' });
 
-    // this.reset();
+    this.reset();
   };
 
   // //очистка формы
-  // reset = () => {
-  //   this.state({
-  //     // contacts: [],
-  //     name: '',
-  //     number: '',
-  //   });
-  // };
-  // ///👌
+  reset = () => {
+    this.setState({
+      // contacts: [],
+      name: '',
+      number: '',
+    });
+  };
+
+  ///👌
 
   // Можно использовать любой пакет для генерации уникальных строк
 
