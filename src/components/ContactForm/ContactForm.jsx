@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
+
 import { WrapperForm, Label, Input, Button } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
-    contacts: [],
     name: '',
     number: '',
   };
-
-  loginNameId = nanoid();
-  loginNumberId = nanoid();
 
   handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -19,21 +15,21 @@ class ContactForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state.name, this.state.number);
+    this.props.onSubmit({ ...this.state });
     this.setState({ name: '', number: '' });
 
     // this.reset();
   };
 
-  //очистка формы
-  reset = () => {
-    this.state({
-      // contacts: [],
-      name: '',
-      number: '',
-    });
-  };
-  ///👌
+  // //очистка формы
+  // reset = () => {
+  //   this.state({
+  //     // contacts: [],
+  //     name: '',
+  //     number: '',
+  //   });
+  // };
+  // ///👌
 
   // Можно использовать любой пакет для генерации уникальных строк
 
@@ -41,14 +37,13 @@ class ContactForm extends Component {
     return (
       <WrapperForm>
         <form onSubmit={this.handleSubmit}>
-          <Label htmlFor={this.loginName}>
+          <Label>
             Name
             <Input
               type="name"
               name="name"
               value={this.state.name}
               onChange={this.handleChange}
-              id={this.loginNameId}
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               // value={this.state.name}
               // onChange={this.handleChange}
@@ -56,12 +51,11 @@ class ContactForm extends Component {
               required
             />
           </Label>
-          <Label htmlFor={this.loginNumber}>
+          <Label>
             Number
             <Input
               type="tel"
               name="number"
-              id={this.loginNumberId}
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               value={this.state.number}
               onChange={this.handleChange}

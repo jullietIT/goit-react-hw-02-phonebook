@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
@@ -13,12 +12,11 @@ class App extends Component {
     filter: '',
   };
 
-  addContact = (name, number) => {
+  addContact = contact => {
     const { contacts } = this.state;
     const newContact = {
       id: nanoid(),
-      name,
-      number,
+      ...contact,
     };
     if (contacts.find(contact => contact.name === newContact.name)) {
       alert(`${newContact.name} is already in contacts.`);
